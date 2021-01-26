@@ -1,0 +1,55 @@
+<%- include("./../partials/header.ejs") %> 
+<%- include("./../partials/topnav.ejs") %>		
+<%- include("./../partials/partialnav.ejs") %>
+    
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate mb-5 text-center">
+          	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Cart <i class="fa fa-chevron-right"></i></span></p>
+            <h2 class="mb-0 bread">My Cart</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+	
+	<main style="background-color: #f5f5f5;" class="main-acct w-100 h-100 d-flex no-dark-body">
+		<%- include("./../partials/account-sidebar.ejs") %> 
+		<section class="second-sect">
+			<div class="acc-header acc-border-bottom d-flex align-items-center h-58 px-3">
+				<h3>Saved Items</h3>
+			</div>
+			<div class="acc-bottom w-100 p-4">
+				<% for(var i=0; i<data.orders.length; i++){ %> 
+					<% for(var j=0; j<data.orders[i].length; j++){ %> 
+						<div class="acc-order-card w-75 d-flex mt-4">
+							<div style="background: url(./images/prod-11.jpg);" class="acc-order-img mr-1"></div>
+							<div class="">
+								<span class="acc-order-name"><%=data.orders[i][j].name %> </span><br>
+								<span style="color: #8b8b8b;" class="acc-txt-s">Order <%=data.orders[i][j].order_id %></span><br>
+								<span style="color: #8b8b8b;" class="acc-txt-s">Quantity: <%=data.orders[i][j].quantity %></span><br>
+								<% if(data.orders[i][j].status === "Order Confirmed"){ %> 
+								<span class="acc-order-status acc-transit py-1 px-2">In-Transit</span><br>
+								<% }else{ %>
+								<span class="acc-order-status acc-delivered py-1 px-2">Delivered</span><br>
+								<% } %>  
+								<span style="color: #000;" class="acc-txt-s">Delivered between 31-07-1999 and 7-09-3000</span>
+							</div>
+						</div>
+					<% } %> 
+				<% } %>
+			</div>
+		</section>
+		<div class="show-first-sect ml-n2">
+			<img src="./images/right-arrow.svg" width="50px" alt="">
+		</div>		
+	</main>
+
+
+	<%- include("./../partials/footer.ejs") %> 
+	<%- include("./../partials/bottomlinks.ejs") %> 	
+    <script src="js/calculatecart.js"></script>
+  </body>
+</html>

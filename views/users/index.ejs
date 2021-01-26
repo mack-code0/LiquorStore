@@ -1,0 +1,89 @@
+<%- include("./../partials/header.ejs") %> 
+<%- include("./../partials/topnav.ejs") %>		
+<%- include("./../partials/partialnav.ejs") %>
+    
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate mb-5 text-center">
+          	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Cart <i class="fa fa-chevron-right"></i></span></p>
+            <h2 class="mb-0 bread">My Cart</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+	
+	<main style="background-color: #f5f5f5;" class="main-acct w-100 h-100 d-flex no-dark-body">
+		<%- include("./../partials/account-sidebar.ejs") %> 
+		<section class="second-sect">
+			<div class="acc-header acc-border-bottom d-flex align-items-center h-58 px-3">
+				<h3>Account Overview</h3>
+			</div>
+			<div class="acc-bottom w-100">
+				<div class="w-100 acc-bottom-topbox p-4">
+					<div style="margin-right: 0.75rem;" class="w-50 acc-border">
+						<div class="acc-border-bottom d-flex justify-content-between align-items-center p-3">
+							<span>Account Details</span>
+							<a href="#"><img src="./images/edit1.svg" width=" 20px" alt=""></a>
+						</div>
+						<div class="p-3">
+							<h4 id="acc-name"><%=data.userInfo.firstname %> <%=data.userInfo.lastname %> </h4>
+							<p id="acc-email" class="mb-5"><%=data.userInfo.email %></p>
+							<a href="" class="mt-5">Change Password</a>
+						</div>
+					</div>
+					<div style="margin-left: 0.75rem;" class="w-50 acc-border acc-sm-mt">
+						<div class="acc-border-bottom d-flex justify-content-between align-items-center p-3">
+							<span>Address Book</span>
+							<a href="#"><img src="./images/edit1.svg" width=" 20px" alt=""></a>
+						</div>
+						<div class="p-3">
+							<h5 id="acc-name">Your Default Shipping Address:</h5>
+							<p id="acc-email"><%=data.userInfo.address %>, <%=data.userInfo.city %>, <%=data.userInfo.country %></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="w-100 d-flex px-4 pb-4">
+					<div class="w-100 acc-border">
+						<div class="acc-border-bottom d-flex justify-content-between align-items-center p-3">
+							<span>NEWSLETTER PREFERENCES</span>
+							<a href="#"><img src="./images/edit1.svg" width=" 20px" alt=""></a>
+						</div>
+						<div class="p-3">
+							<% if(data.userInfo.newsletter){ %> 
+								<h4 id="acc-name">You are currently subscribed to the following newsletters: </h4>
+								<p id="acc-email" class="mb-5">
+								<span>&marker;</span> Daily Newsletters
+								</p>
+							<% }else{ %>
+								<h4 id="acc-name">You are currently <b>NOT</b> subscribed to any newsletter </h4>
+							<% } %>  
+						</div>
+					</div>
+					<!-- <div style="margin-left: 0.75rem;" class="w-50 acc-border">
+						<div class="acc-border-bottom d-flex justify-content-between align-items-center p-3">
+							<span>Address Book</span>
+							<span><img src="./images/heart.svg" width=" 20px" alt=""></span>
+						</div>
+						<div class="p-3">
+							<h5 id="acc-name">Your Default Shipping Address</h5>
+							<p id="acc-email">19, Oluobadare, Alakuko, Alagbado, Lagos, Nigeria</p>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</section>
+		<div class="show-first-sect ml-n2">
+			<img src="./images/right-arrow.svg" width="50px" alt="">
+		</div>		
+	</main>
+
+
+	<%- include("./../partials/footer.ejs") %> 
+	<%- include("./../partials/bottomlinks.ejs") %> 	
+    <script src="js/calculatecart.js"></script>
+  </body>
+</html>

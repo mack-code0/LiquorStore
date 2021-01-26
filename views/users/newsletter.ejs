@@ -1,0 +1,51 @@
+
+<%- include("./../partials/header.ejs") %> 
+<%- include("./../partials/topnav.ejs") %>		
+<%- include("./../partials/partialnav.ejs") %>
+    
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate mb-5 text-center">
+          	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Cart <i class="fa fa-chevron-right"></i></span></p>
+            <h2 class="mb-0 bread">My Cart</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+	
+	<main style="background-color: #f5f5f5;" class="main-acct w-100 h-100 d-flex no-dark-body">
+		<%- include("./../partials/account-sidebar.ejs") %> 
+    <section class="second-sect">
+      <div class="acc-header acc-border-bottom d-flex align-items-center h-58 px-3">
+          <h4>Newsletter Preferences</h4>
+      </div>
+      <div class="acc-bottom w-100 p-4">
+          <form action="">
+              
+              <div class="form-group">
+                  <input type="radio" id="" name="newsletter">
+                  <label for="">Daily Newsletters</label>
+              </div>
+              <div class="form-group">
+                  <input type="radio" id="" name="newsletter">
+                  <label for="">I don't want to recieve Daily Newsletters</label>
+              </div>
+
+              <button style="background-color: #b6472a; font-weight: bold;" class="btn no-rad w-100 text-light py-3 mt-3">SAVE</button>
+          </form>
+      </div>
+  </section>
+		<div class="show-first-sect ml-n2">
+			<img src="./images/right-arrow.svg" width="50px" alt="">
+		</div>		
+	</main>
+
+
+	<%- include("./../partials/footer.ejs") %> 
+	<%- include("./../partials/bottomlinks.ejs") %> 	
+    <script src="js/calculatecart.js"></script>
+  </body>
+</html>

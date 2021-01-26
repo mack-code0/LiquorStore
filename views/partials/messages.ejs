@@ -1,0 +1,37 @@
+<% if(reg_err != "") {%>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%= reg_err  %> 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+<% } %> 
+
+<% if(reg_success != "") {%>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= reg_success  %> 
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+<% } %> 
+
+<% if(error != "") {%>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= error  %> 
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+<% } %> 
+
+<!--  -->
+
+<!-- <%# if(typeof data.apiErr != "undefined") {%>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <%#= "Please Login" %> 
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+<%# } %>  -->
